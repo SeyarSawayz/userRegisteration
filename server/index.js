@@ -15,11 +15,6 @@ app.use(cors({ credentials: true, origin: CLIENT_ORIGINS }));
 
 app.use(cookieParser());
 
-app.get("/", (req, res) => {
-  res.send("Hi");
-  console.log("collection", collection);
-});
-
 app.post("/", async (req, res) => {
   const { email, password } = req.body;
 
@@ -53,7 +48,6 @@ app.post("/signup", async (req, res) => {
     gender,
     birthDate,
   };
-  console.log(data);
   try {
     const userExist = await collection.findOne({ email });
     if (userExist) {
@@ -74,7 +68,6 @@ app.post("/signup", async (req, res) => {
           sameSite: "lax",
           secure: false,
         });
-        console.log(token);
         res.json({
           message: "User registered successfully",
           user: createdUser,
@@ -89,7 +82,6 @@ app.post("/signup", async (req, res) => {
 
 app.get("/logout", (req, res) => {
   res.cookie("token", "");
-  console.log("cookie cleared successfully");
   res.status(200).json({ message: "Logout successful" });
 });
 

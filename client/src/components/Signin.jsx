@@ -28,13 +28,11 @@ const Signin = () => {
           { withCredentials: true }
         )
         .then((res) => {
-          console.log(res.data);
           alert("Logged in successfully");
           navigate("/Home");
         })
         .catch((err) => {
           alert("invalide username or password");
-          console.log(err.message, err.data);
         });
     } catch (error) {
       console.log(error);
