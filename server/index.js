@@ -1,4 +1,3 @@
-import dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
 import { collection } from "./models/user.model.js";
@@ -6,9 +5,6 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import cookieParser from "cookie-parser";
 
-dotenv.config({
-  path: "./.env",
-});
 const app = express();
 
 const CLIENT_ORIGIN = "http://localhost:5173";
