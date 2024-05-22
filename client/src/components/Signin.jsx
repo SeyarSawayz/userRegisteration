@@ -20,7 +20,7 @@ const Signin = () => {
     try {
       await axios
         .post(
-          "https://userregisteration.onrender.com/",
+          "https://userregisteration.onrender.com",
           {
             email,
             password,

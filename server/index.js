@@ -7,12 +7,15 @@ import cookieParser from "cookie-parser";
 
 const app = express();
 
+const CLIENT_ORIGINS = "https://mernuserregister.netlify.app";
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors({ credentials: true, origin: "*" }));
+app.use(cors({ credentials: true, origin: CLIENT_ORIGINS }));
+
 app.use(cookieParser());
 
-app.get("/", cors(), (req, res) => {
+app.get("/", (req, res) => {
   res.send("Hi");
   console.log("collection", collection);
 });
