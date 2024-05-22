@@ -21,7 +21,6 @@ const Signin = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(fullName, email, password, gender, birthDate);
     try {
       await axios
         .post(
