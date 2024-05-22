@@ -6,7 +6,7 @@ const Home = () => {
   const navigate = useNavigate();
   const handleLogout = async () => {
     try {
-      await axios.get("http://localhost:8000/logout"),
+      await axios.get("https://userregisteration.onrender.com/logout"),
         { withCredentials: true };
       navigate("/");
     } catch (error) {
